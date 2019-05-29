@@ -1,7 +1,15 @@
 import React from "react";
-import { Text, View, Image, Linking, TouchableHighlight } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  Linking,
+  TouchableHighlight,
+  Button
+} from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
+import { withNavigation } from "react-navigation";
 
 const goToUrl = url => {
   Linking.canOpenURL(url)
@@ -15,9 +23,11 @@ const goToUrl = url => {
     .catch(err => console.error("An error occurred", err));
 };
 
-const Speaker = ({ speakerData }) => {
+const Speaker = ({ speakerData, navigation }) => {
   return (
     <View>
+      <Button onPress={() => navigation.goBack()} title="Go Back" />
+      <Text>About The Speaker</Text>
       <Image source={{ uri: speakerData.image }} />
       <Text>{speakerData.name}</Text>
       <Text>{speakerData.bio}</Text>
@@ -37,4 +47,4 @@ Speaker.propTypes = {
   speakerData: PropTypes.object
 };
 
-export default Speaker;
+export default withNavigation(Speaker);
