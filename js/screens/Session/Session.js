@@ -4,11 +4,14 @@ import { Text, View, TouchableHighlight, Image } from "react-native";
 import styles from "./styles";
 import moment from "moment";
 import { withNavigation } from "react-navigation";
+import Icon from "react-native-vector-icons/Ionicons";
 
-const Session = ({ sessionData, navigation }) => {
+const Session = ({ sessionData, faveContext, navigation }) => {
+  const faved = !!faveContext.faveIds.find(id => id === sessionData.id);
   return (
     <View>
       <Text>{sessionData.location}</Text>
+      <Icon name="ios-heart" size={20} color={faved ? "red" : "grey"} />
       <Text>{sessionData.title}</Text>
       <Text>{moment(sessionData.startTime).format("LT")}</Text>
       <Text>{sessionData.description}</Text>
@@ -24,12 +27,23 @@ const Session = ({ sessionData, navigation }) => {
           <Text>{sessionData.speaker.name}</Text>
         </View>
       </TouchableHighlight>
+      <TouchableHighlight
+        underlayColor="#EEEFFF"
+        onPress={() => {
+          faved
+            ? faveContext.removeFaveSession(sessionData.id)
+            : faveContext.addFaveSession(sessionData.id);
+        }}
+      >
+        <Text>{faved ? "Remove from Faves" : "Add to Faves"}</Text>
+      </TouchableHighlight>
     </View>
   );
 };
 
 Session.propTypes = {
-  sessionData: PropTypes.object
+  sessionData: PropTypes.object,
+  faveContext: PropTypes.object
 };
 
 export default withNavigation(Session);
