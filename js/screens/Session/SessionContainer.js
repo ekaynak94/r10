@@ -14,12 +14,16 @@ class SessionContainer extends Component {
   render() {
     const { navigation } = this.props;
     const session = navigation.getParam("session");
+
     return (
       <Query query={GET_SESSION_SPEAKER} variables={{ id: session.id }}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
-          console.log(data);
-          return <Session />;
+          return (
+            <Session
+              sessionData={{ ...session, speaker: data.Session.speaker }}
+            />
+          );
         }}
       </Query>
     );
