@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { ApolloProvider } from "react-apollo";
-import FavesProvider from "./context/FavesContext";
+import { FavesProvider } from "./context/FavesContext";
 import client from "./config/api";
 import RootStackNavigator from "./navigation/RootStackNavigator";
 

@@ -45,7 +45,6 @@ class FavesProvider extends Component {
   };
 
   render() {
-    console.log(this.state.faveIds);
     return (
       <FavesContext.Provider
         value={{
@@ -60,4 +59,5 @@ class FavesProvider extends Component {
   }
 }
 
-export default FavesProvider;
+export { FavesProvider };
+export default FavesContext;
