@@ -27,6 +27,7 @@ const GET_ALL_SESSIONS = gql`
   query {
     allSessions(orderBy: startTime_DESC) {
       id
+      description
       location
       startTime
       title
