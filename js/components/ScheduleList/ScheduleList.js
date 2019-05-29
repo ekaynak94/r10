@@ -3,7 +3,7 @@ import { FlatList, View, Text } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
-const SessionList = ({ sessions }) => {
+const ScheduleList = ({ sessions }) => {
   console.log(sessions);
   return (
     <View>
@@ -20,8 +20,8 @@ const SessionList = ({ sessions }) => {
   );
 };
 
-SessionList.propTypes = {
+ScheduleList.propTypes = {
   sessions: PropTypes.array
 };
 
-export default SessionList;
+export default ScheduleList;
