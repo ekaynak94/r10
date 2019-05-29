@@ -4,35 +4,33 @@ import styles from "./styles";
 import PropTypes from "prop-types";
 import moment from "moment";
 import SessionListItem from "../SessionListItem";
-import FavesContext from "../../context/FavesContext";
+import { formatSessionData } from "../../helpers";
 
-const SessionList = ({ allSections }) => {
+const SessionList = ({ allSessions, faveIds }) => {
+  const allSections = formatSessionData(allSessions);
   return (
-    <FavesContext.Consumer>
-      {value => (
-        <View>
-          <SectionList
-            renderItem={({ item, index, section }) => (
-              <SessionListItem
-                key={item.id}
-                session={item}
-                faved={!!value.faveIds.find(id => id === item.id)}
-              />
-            )}
-            renderSectionHeader={({ section: { title } }) => (
-              <Text>{moment(title).format("LT")}</Text>
-            )}
-            sections={allSections}
-            keyExtractor={(item, index) => item.title}
+    <View>
+      <SectionList
+        renderItem={({ item, index, section }) => (
+          <SessionListItem
+            key={item.id}
+            session={item}
+            faved={!!faveIds.find(id => id === item.id)}
           />
-        </View>
-      )}
-    </FavesContext.Consumer>
+        )}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text>{moment(title).format("LT")}</Text>
+        )}
+        sections={allSections}
+        keyExtractor={(item, index) => item.title}
+      />
+    </View>
   );
 };
 
 SessionList.propTypes = {
-  allSections: PropTypes.array
+  allSections: PropTypes.array,
+  faveIds: PropTypes.array
 };
 
 export default SessionList;
