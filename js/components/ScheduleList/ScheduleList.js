@@ -15,7 +15,7 @@ const ScheduleList = ({ sessions, navigation }) => {
             underlayColor="#EEEFFF"
             onPress={() => {
               navigation.navigate("Session", {
-                sessionId: item.id
+                session: item
               });
             }}
           >
