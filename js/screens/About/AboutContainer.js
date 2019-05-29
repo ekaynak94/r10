@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
-import { GET_CONDUCT_ITEMS } from "../../config/queries";
+import gql from "graphql-tag";
 
 import About from "./About";
 
@@ -21,5 +21,16 @@ class AboutContainer extends Component {
     );
   }
 }
+
+const GET_CONDUCT_ITEMS = gql`
+  query {
+    allConducts(orderBy: order_ASC) {
+      id
+      description
+      title
+      order
+    }
+  }
+`;
 
 export default AboutContainer;
