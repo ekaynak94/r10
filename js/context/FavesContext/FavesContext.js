@@ -17,7 +17,6 @@ class FavesProvider extends Component {
     try {
       const faves = await queryFaves();
       const faveIds = faves.map(fave => fave[0]);
-      console.log(faveIds);
       this.setState({ faveIds });
     } catch (e) {
       return false;
