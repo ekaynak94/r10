@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
+import { FlatList, View, Text, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
@@ -11,10 +11,17 @@ const ScheduleList = ({ sessions }) => {
         data={sessions}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.location}</Text>
-          </View>
+          <TouchableHighlight
+            underlayColor="#EEEFFF"
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <View>
+              <Text>{item.title}</Text>
+              <Text>{item.location}</Text>
+            </View>
+          </TouchableHighlight>
         )}
         keyExtractor={(item, index) => item.id}
       />
