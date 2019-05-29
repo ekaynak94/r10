@@ -9,6 +9,7 @@ const ScheduleList = ({ sessions }) => {
     <View>
       <FlatList
         data={sessions}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderItem={({ item }) => (
           <View>
             <Text>{item.title}</Text>
