@@ -14,8 +14,7 @@ class AboutContainer extends Component {
       <Query query={GET_CONDUCT_ITEMS}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
-          console.log(data);
-          return <About />;
+          return <About allConducts={data.allConducts} />;
         }}
       </Query>
     );
