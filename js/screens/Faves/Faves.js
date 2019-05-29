@@ -1,13 +1,20 @@
 import React from "react";
 import { Text, View } from "react-native";
+import PropTypes from "prop-types";
+import SessionList from "../../components/SessionList";
 import styles from "./styles";
 
-const Faves = () => {
+const Faves = ({ allSessions, faveIds }) => {
   return (
-    <View style={styles.container}>
-      <Text>This is the Faves screen...</Text>
+    <View>
+      <SessionList allSessions={allSessions} faveIds={faveIds} />
     </View>
   );
+};
+
+Faves.propTypes = {
+  allSessions: PropTypes.array,
+  faveIds: PropTypes.array
 };
 
 export default Faves;
