@@ -3,9 +3,9 @@ import { View, Text, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 import { withNavigation } from "react-navigation";
-import FaveIcon from "../FaveIcon";
+import Icon from "react-native-vector-icons/Ionicons";
 
-const SessionListItem = ({ session, navigation }) => {
+const SessionListItem = ({ session, navigation, faved }) => {
   return (
     <TouchableHighlight
       underlayColor="#EEEFFF"
@@ -18,14 +18,15 @@ const SessionListItem = ({ session, navigation }) => {
       <View>
         <Text>{session.title}</Text>
         <Text>{session.location}</Text>
-        <FaveIcon sessionId={session.id} />
+        <Icon name="ios-heart" size={20} color={faved ? "red" : "grey"} />
       </View>
     </TouchableHighlight>
   );
 };
 
 SessionListItem.propTypes = {
-  session: PropTypes.object
+  session: PropTypes.object,
+  faved: PropTypes.bool
 };
 
 export default withNavigation(SessionListItem);
