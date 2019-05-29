@@ -4,7 +4,7 @@ import Faves from "./Faves";
 
 class FavesContainer extends Component {
   static navigationOptions = {
-    tite: "Faves"
+    title: "Faves"
   };
 
   render() {

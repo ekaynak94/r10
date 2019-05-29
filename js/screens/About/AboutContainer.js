@@ -7,7 +7,7 @@ import About from "./About";
 
 class AboutContainer extends Component {
   static navigationOptions = {
-    tite: "About"
+    title: "About"
   };
   render() {
     return (

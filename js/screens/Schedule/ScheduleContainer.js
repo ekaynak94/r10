@@ -4,7 +4,7 @@ import Schedule from "./Schedule";
 
 class ScheduleContainer extends Component {
   static navigationOptions = {
-    tite: "Schedule"
+    title: "Schedule"
   };
 
   render() {
