@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Text, View, TouchableHighlight, Image } from "react-native";
 import styles from "./styles";
 import moment from "moment";
+import { withNavigation } from "react-navigation";
 
-const Session = ({ sessionData }) => {
-  console.log(sessionData);
+const Session = ({ sessionData, navigation }) => {
   return (
     <View>
       <Text>{sessionData.location}</Text>
@@ -16,7 +16,7 @@ const Session = ({ sessionData }) => {
       <TouchableHighlight
         underlayColor="#EEEFFF"
         onPress={() => {
-          console.log("pressed");
+          navigation.navigate("Speaker", { speaker: sessionData.speaker });
         }}
       >
         <View>
@@ -32,4 +32,4 @@ Session.propTypes = {
   sessionData: PropTypes.object
 };
 
-export default Session;
+export default withNavigation(Session);
