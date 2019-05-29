@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import { formatSessionData } from "../../helpers";
 import Faves from "./Faves";
+import FaveContext from "../../context/FavesContext";
 
 class FavesContainer extends Component {
   static navigationOptions = {
@@ -15,7 +15,18 @@ class FavesContainer extends Component {
       <Query query={GET_ALL_SESSIONS}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
-          return <Faves allSessions={data.allSessions} faveIds={[]} />;
+          return (
+            <FaveContext.Consumer>
+              {value => (
+                <Faves
+                  allSessions={data.allSessions.filter(session =>
+                    value.faveIds.find(id => id === session.id)
+                  )}
+                  faveIds={value.faveIds}
+                />
+              )}
+            </FaveContext.Consumer>
+          );
         }}
       </Query>
     );
