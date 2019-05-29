@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, View, Text } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 const SectionList = ({ allSessions }) => {
   console.log(allSessions);
@@ -11,7 +12,7 @@ const SectionList = ({ allSessions }) => {
         data={allSessions}
         renderItem={({ item }) => (
           <View>
-            <Text>{item.title}</Text>
+            <Text>{moment(item.title).format("LT")}</Text>
           </View>
         )}
         keyExtractor={(item, index) => item.title}
