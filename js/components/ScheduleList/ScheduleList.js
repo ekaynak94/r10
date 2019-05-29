@@ -12,6 +12,7 @@ const ScheduleList = ({ sessions }) => {
         renderItem={({ item }) => (
           <View>
             <Text>{item.title}</Text>
+            <Text>{item.location}</Text>
           </View>
         )}
         keyExtractor={(item, index) => item.id}
