@@ -6,7 +6,7 @@ import styles from "./styles";
 const About = ({ allConducts }) => {
   console.log(allConducts);
   return (
-    <View style={styles.container}>
+    <View>
       <Text>This is the about screen...</Text>
     </View>
   );
