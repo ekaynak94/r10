@@ -2,9 +2,9 @@ import React from "react";
 import { FlatList, View, Text, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
+import { withNavigation } from "react-navigation";
 
-const ScheduleList = ({ sessions }) => {
-  console.log(sessions);
+const ScheduleList = ({ sessions, navigation }) => {
   return (
     <View>
       <FlatList
@@ -14,7 +14,9 @@ const ScheduleList = ({ sessions }) => {
           <TouchableHighlight
             underlayColor="#EEEFFF"
             onPress={() => {
-              console.log("pressed");
+              navigation.navigate("Session", {
+                sessionId: item.id
+              });
             }}
           >
             <View>
@@ -33,4 +35,4 @@ ScheduleList.propTypes = {
   sessions: PropTypes.array
 };
 
-export default ScheduleList;
+export default withNavigation(ScheduleList);
