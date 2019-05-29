@@ -3,6 +3,7 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from "react-navigation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import AboutScreen from "../screens/About";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
@@ -29,10 +30,27 @@ export default createBottomTabNavigator(
     Faves: FavesStack
   },
   {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === "Schedule") {
+          iconName = `ios-calendar`;
+        } else if (routeName === "Faves") {
+          iconName = `ios-heart`;
+        } else if (routeName === "About") {
+          iconName = `ios-information-circle`;
+        }
+
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      }
+    }),
     tabBarOptions: {
-      activeTintColor: "ffffff",
+      activeTintColor: "white",
       inactiveTintColor: "medium grey",
       labelStyle: {
+        fontStyle: "Montserrat",
         fontSize: 10
       },
       style: {
