@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import styles from "./styles";
-import SectionList from "../../components/SectionList";
+import SessionList from "../../components/SessionList";
 
 const Schedule = ({ allSessions }) => {
   return (
     <View>
-      <SectionList allSessions={allSessions} />
+      <SessionList allSessions={allSessions} />
     </View>
   );
 };

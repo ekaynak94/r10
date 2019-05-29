@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import ScheduleList from "../ScheduleList";
 
-const SectionList = ({ allSessions }) => {
+const SessionList = ({ allSessions }) => {
+  console.log(allSessions);
   return (
     <View>
       <FlatList
@@ -22,8 +23,8 @@ const SectionList = ({ allSessions }) => {
   );
 };
 
-SectionList.propTypes = {
+SessionList.propTypes = {
   allSessions: PropTypes.array
 };
 
-export default SectionList;
+export default SessionList;
