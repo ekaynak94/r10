@@ -47,9 +47,9 @@ const FavesStack = createStackNavigator(
 
 export default createBottomTabNavigator(
   {
-    About: AboutStack,
     Schedule: ScheduleStack,
-    Faves: FavesStack
+    Faves: FavesStack,
+    About: AboutStack
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
