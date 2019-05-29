@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { ApolloProvider } from "react-apollo";
-import { View } from "react-native";
+import FavesProvider from "./context/FavesContext";
 import client from "./config/api";
 import RootStackNavigator from "./navigation/RootStackNavigator";
 
@@ -9,7 +9,9 @@ export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <RootStackNavigator />
+        <FavesProvider>
+          <RootStackNavigator />
+        </FavesProvider>
       </ApolloProvider>
     );
   }
