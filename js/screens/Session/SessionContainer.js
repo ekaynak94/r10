@@ -4,7 +4,7 @@ import Session from "./Session";
 
 class SessionContainer extends Component {
   static navigationOptions = {
-    tite: "Session"
+    title: "Session"
   };
 
   render() {
