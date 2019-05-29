@@ -16,7 +16,7 @@ class ScheduleContainer extends Component {
       <Query query={GET_ALL_SESSIONS}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
-          return <Schedule allSessions={formatSessionData(data.allSessions)} />;
+          return <Schedule allSections={formatSessionData(data.allSessions)} />;
         }}
       </Query>
     );

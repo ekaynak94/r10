@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import ScheduleList from "../ScheduleList";
 
-const SessionList = ({ allSessions }) => {
+const SessionList = ({ allSections }) => {
   return (
     <View>
       <SectionList
@@ -15,7 +15,7 @@ const SessionList = ({ allSessions }) => {
         renderSectionHeader={({ section: { title } }) => (
           <Text>{moment(title).format("LT")}</Text>
         )}
-        sections={allSessions}
+        sections={allSections}
         keyExtractor={(item, index) => item.title}
       />
     </View>
@@ -23,7 +23,7 @@ const SessionList = ({ allSessions }) => {
 };
 
 SessionList.propTypes = {
-  allSessions: PropTypes.array
+  allSections: PropTypes.array
 };
 
 export default SessionList;
