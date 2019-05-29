@@ -48,9 +48,8 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: "white",
-      inactiveTintColor: "medium grey",
+      inactiveTintColor: "grey",
       labelStyle: {
-        fontStyle: "Montserrat",
         fontSize: 10
       },
       style: {
