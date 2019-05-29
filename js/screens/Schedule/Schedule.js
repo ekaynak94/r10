@@ -4,16 +4,17 @@ import { Text, View } from "react-native";
 import styles from "./styles";
 import SessionList from "../../components/SessionList";
 
-const Schedule = ({ allSections }) => {
+const Schedule = ({ allSessions, faveIds }) => {
   return (
     <View>
-      <SessionList allSections={allSections} />
+      <SessionList allSessions={allSessions} faveIds={faveIds} />
     </View>
   );
 };
 
 Schedule.propTypes = {
-  allSections: PropTypes.array
+  allSessions: PropTypes.array,
+  faveIds: PropTypes.array
 };
 
 export default Schedule;
