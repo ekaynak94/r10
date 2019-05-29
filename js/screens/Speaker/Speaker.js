@@ -26,7 +26,7 @@ const goToUrl = url => {
 const Speaker = ({ speakerData, navigation }) => {
   return (
     <View>
-      <Button onPress={() => navigation.goBack()} title="Go Back" />
+      <Button onPress={() => navigation.goBack()} title="X" />
       <Text>About The Speaker</Text>
       <Image source={{ uri: speakerData.image }} />
       <Text>{speakerData.name}</Text>
