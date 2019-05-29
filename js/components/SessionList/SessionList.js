@@ -4,21 +4,30 @@ import styles from "./styles";
 import PropTypes from "prop-types";
 import moment from "moment";
 import SessionListItem from "../SessionListItem";
+import FavesContext from "../../context/FavesContext";
 
 const SessionList = ({ allSections }) => {
   return (
-    <View>
-      <SectionList
-        renderItem={({ item, index, section }) => (
-          <SessionListItem key={item.id} session={item} />
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text>{moment(title).format("LT")}</Text>
-        )}
-        sections={allSections}
-        keyExtractor={(item, index) => item.title}
-      />
-    </View>
+    <FavesContext.Consumer>
+      {value => (
+        <View>
+          <SectionList
+            renderItem={({ item, index, section }) => (
+              <SessionListItem
+                key={item.id}
+                session={item}
+                faved={!!value.faveIds.find(id => id === item.id)}
+              />
+            )}
+            renderSectionHeader={({ section: { title } }) => (
+              <Text>{moment(title).format("LT")}</Text>
+            )}
+            sections={allSections}
+            keyExtractor={(item, index) => item.title}
+          />
+        </View>
+      )}
+    </FavesContext.Consumer>
   );
 };
 
