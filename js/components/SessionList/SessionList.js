@@ -9,7 +9,7 @@ import { formatSessionData } from "../../helpers";
 const SessionList = ({ allSessions, faveIds }) => {
   const allSections = formatSessionData(allSessions);
   return (
-    <View>
+    <View style={styles.root}>
       <SectionList
         renderItem={({ item, index, section }) => (
           <SessionListItem
@@ -18,8 +18,11 @@ const SessionList = ({ allSessions, faveIds }) => {
             faved={!!faveIds.find(id => id === item.id)}
           />
         )}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderSectionHeader={({ section: { title } }) => (
-          <Text>{moment(title).format("LT")}</Text>
+          <View style={styles.container}>
+            <Text style={styles.header}>{moment(title).format("LT")}</Text>
+          </View>
         )}
         sections={allSections}
         keyExtractor={(item, index) => item.title}
