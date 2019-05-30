@@ -70,7 +70,7 @@ export default createDrawerNavigator(
       activeTintColor: theme.colors.purple,
       inactiveTintColor: theme.colors.mediumGrey,
       labelStyle: {
-        fontSize: 10
+        fontSize: theme.fonts.fontSize * 0.9
       }
     }
   }
