@@ -20,28 +20,32 @@ const Session = ({ sessionData, faveContext, navigation }) => {
       <Text>{sessionData.title}</Text>
       <Text>{moment(sessionData.startTime).format("LT")}</Text>
       <Text>{sessionData.description}</Text>
-      <Text>Presented by:</Text>
-      <TouchableHighlight
-        underlayColor="#EEEFFF"
-        onPress={() => {
-          navigation.navigate("Speaker", { speaker: sessionData.speaker });
-        }}
-      >
+      {sessionData.speaker && (
         <View>
-          <Image source={{ uri: sessionData.speaker.image }} />
-          <Text>{sessionData.speaker.name}</Text>
+          <Text>Presented by:</Text>
+          <TouchableHighlight
+            underlayColor="#EEEFFF"
+            onPress={() => {
+              navigation.navigate("Speaker", { speaker: sessionData.speaker });
+            }}
+          >
+            <View>
+              <Image source={{ uri: sessionData.speaker.image }} />
+              <Text>{sessionData.speaker.name}</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            underlayColor="#EEEFFF"
+            onPress={() => {
+              faved
+                ? faveContext.removeFaveSession(sessionData.id)
+                : faveContext.addFaveSession(sessionData.id);
+            }}
+          >
+            <Text>{faved ? "Remove from Faves" : "Add to Faves"}</Text>
+          </TouchableHighlight>
         </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        underlayColor="#EEEFFF"
-        onPress={() => {
-          faved
-            ? faveContext.removeFaveSession(sessionData.id)
-            : faveContext.addFaveSession(sessionData.id);
-        }}
-      >
-        <Text>{faved ? "Remove from Faves" : "Add to Faves"}</Text>
-      </TouchableHighlight>
+      )}
     </View>
   );
 };
