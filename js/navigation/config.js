@@ -16,20 +16,33 @@ const GradientHeader = props => (
   </View>
 );
 
-const HamburgerMenu = ({ navigation }) => (
-  <TouchableOpacity
-    style={{ padding: 1, marginLeft: 8 }}
-    onPress={() => navigation.openDrawer()}
-  >
-    <Icon name="md-menu" size={25} color="white" />
-  </TouchableOpacity>
-);
+const NavButton = ({ navigation }) => {
+  if (navigation.state.routeName === "Session") {
+    return (
+      <TouchableOpacity
+        style={{ padding: 1, marginLeft: 8 }}
+        onPress={() => navigation.goBack()}
+      >
+        <Icon title="md-arrow-round-back" size={25} color="white" />
+      </TouchableOpacity>
+    );
+  } else {
+    return (
+      <TouchableOpacity
+        style={{ padding: 1, marginLeft: 8 }}
+        onPress={() => navigation.openDrawer()}
+      >
+        <Icon name="md-menu" size={25} color="white" />
+      </TouchableOpacity>
+    );
+  }
+};
 
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
   headerLeft: Platform.select({
-    android: <HamburgerMenu navigation={navigation} />
+    android: <NavButton navigation={navigation} />
   }),
   headerStyle: {
     backgroundColor: "transparent"
