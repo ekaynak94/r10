@@ -9,6 +9,7 @@ import AboutScreen from "../screens/About";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
+import theme from "../config/styles";
 
 const AboutStack = createStackNavigator(
   {
@@ -69,8 +70,8 @@ export default createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: "white",
-      inactiveTintColor: "grey",
+      activeTintColor: theme.colors.lightGrey,
+      inactiveTintColor: theme.colors.mediumGrey,
       labelStyle: {
         fontSize: 10
       },

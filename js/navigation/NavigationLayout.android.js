@@ -6,6 +6,7 @@ import AboutScreen from "../screens/About";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
+import theme from "../config/styles";
 
 const AboutStack = createStackNavigator(
   {
@@ -66,13 +67,10 @@ export default createDrawerNavigator(
       }
     }),
     contentOptions: {
-      activeTintColor: "purple",
-      inactiveTintColor: "grey",
+      activeTintColor: theme.colors.purple,
+      inactiveTintColor: theme.colors.mediumGrey,
       labelStyle: {
         fontSize: 10
-      },
-      style: {
-        backgroundColor: "black"
       }
     }
   }

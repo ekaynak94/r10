@@ -21,7 +21,7 @@ const HamburgerMenu = ({ navigation }) => (
     style={{ padding: 1, marginLeft: 8 }}
     onPress={() => navigation.openDrawer()}
   >
-    <Icon name="md-menu" size={25} color={"white"} />
+    <Icon name="md-menu" size={25} color="white" />
   </TouchableOpacity>
 );
 
