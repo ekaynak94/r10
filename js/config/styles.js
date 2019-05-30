@@ -12,7 +12,8 @@ const theme = {
     fontFamily: Platform.select({
       ios: "Montserrat",
       android: "Montserrat-Regular"
-    })
+    }),
+    fontSize: 12
   }
 };
 export default theme;
