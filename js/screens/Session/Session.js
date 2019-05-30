@@ -1,17 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, TouchableHighlight, Image } from "react-native";
+import { Platform, Text, View, TouchableHighlight, Image } from "react-native";
 import styles from "./styles";
 import moment from "moment";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
+
+const HeartIcon = Platform.select({
+  ios: "ios-heart",
+  android: "md-heart"
+});
 
 const Session = ({ sessionData, faveContext, navigation }) => {
   const faved = !!faveContext.faveIds.find(id => id === sessionData.id);
   return (
     <View>
       <Text>{sessionData.location}</Text>
-      <Icon name="ios-heart" size={20} color={faved ? "red" : "grey"} />
+      {faved && <Icon name={HeartIcon} size={20} color={"red"} />}
       <Text>{sessionData.title}</Text>
       <Text>{moment(sessionData.startTime).format("LT")}</Text>
       <Text>{sessionData.description}</Text>

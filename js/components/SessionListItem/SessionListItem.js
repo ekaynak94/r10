@@ -1,9 +1,14 @@
 import React from "react";
-import { View, Text, TouchableHighlight } from "react-native";
+import { Platform, View, Text, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
+
+const HeartIcon = Platform.select({
+  ios: "ios-heart",
+  android: "md-heart"
+});
 
 const SessionListItem = ({ session, navigation, faved }) => {
   return (
@@ -18,7 +23,7 @@ const SessionListItem = ({ session, navigation, faved }) => {
       <View>
         <Text>{session.title}</Text>
         <Text>{session.location}</Text>
-        <Icon name="ios-heart" size={20} color={faved ? "red" : "grey"} />
+        {faved && <Icon name={HeartIcon} size={20} color={"red"} />}
       </View>
     </TouchableHighlight>
   );
