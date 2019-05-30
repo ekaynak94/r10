@@ -60,6 +60,7 @@ const Session = ({ sessionData, faveContext, navigation }) => {
           <View style={styles.buttonContainer}>
             <TouchableHighlight
               underlayColor={theme.colors.lightGrey}
+              style={styles.buttonHighlight}
               onPress={() => {
                 faved
                   ? faveContext.removeFaveSession(sessionData.id)

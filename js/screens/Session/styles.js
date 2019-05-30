@@ -80,11 +80,15 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 3,
-    marginTop: 3,
     padding: 10,
     borderRadius: 20
   },
+  buttonHighlight: {
+    borderRadius: 20,
+    marginBottom: 3,
+    marginTop: 3
+  },
+
   buttonText: {
     fontFamily: theme.fonts.fontFamily,
     fontSize: theme.fonts.fontSize,
