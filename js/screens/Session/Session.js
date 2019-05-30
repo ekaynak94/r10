@@ -68,7 +68,7 @@ const Session = ({ sessionData, faveContext, navigation }) => {
               }}
             >
               <LinearGradient
-                colors={[theme.colors.purple, theme.colors.red]}
+                colors={[theme.colors.purple, theme.colors.lightPurple]}
                 start={{ x: 0.0, y: 1.0 }}
                 end={{ x: 1.0, y: 0.0 }}
                 style={styles.button}

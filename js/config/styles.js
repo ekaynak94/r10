@@ -6,6 +6,7 @@ const theme = {
     lightGrey: "#e6e6e6",
     blue: "#8797D6",
     purple: "#9963ea",
+    lightPurple: "#8875ee",
     red: "#cf392a"
   },
   fonts: {
