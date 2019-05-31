@@ -13,8 +13,8 @@ const Faves = ({ allSessions, faveIds }) => {
 };
 
 Faves.propTypes = {
-  allSessions: PropTypes.array,
-  faveIds: PropTypes.array
+  allSessions: PropTypes.array.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default Faves;

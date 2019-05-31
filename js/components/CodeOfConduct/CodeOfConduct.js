@@ -21,7 +21,7 @@ const CodeOfConduct = ({ allConducts }) => (
 );
 
 CodeOfConduct.propTypes = {
-  allConduct: PropTypes.array
+  allConducts: PropTypes.array.isRequired
 };
 
 export default CodeOfConduct;

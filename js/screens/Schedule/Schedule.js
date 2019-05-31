@@ -13,8 +13,8 @@ const Schedule = ({ allSessions, faveIds }) => {
 };
 
 Schedule.propTypes = {
-  allSessions: PropTypes.array,
-  faveIds: PropTypes.array
+  allSessions: PropTypes.array.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default Schedule;

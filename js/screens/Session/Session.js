@@ -84,8 +84,8 @@ const Session = ({ sessionData, faveContext, navigation }) => {
 };
 
 Session.propTypes = {
-  sessionData: PropTypes.object,
-  faveContext: PropTypes.object
+  sessionData: PropTypes.object.isRequired,
+  faveContext: PropTypes.object.isRequired
 };
 
 export default withNavigation(Session);

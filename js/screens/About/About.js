@@ -33,7 +33,7 @@ const About = ({ allConducts }) => {
 };
 
 About.propTypes = {
-  allConducts: PropTypes.array
+  allConducts: PropTypes.array.isRequired
 };
 
 export default About;

@@ -64,7 +64,7 @@ const Speaker = ({ speakerData, navigation }) => {
 };
 
 Speaker.propTypes = {
-  speakerData: PropTypes.object
+  speakerData: PropTypes.object.isRequired
 };
 
 export default withNavigation(Speaker);

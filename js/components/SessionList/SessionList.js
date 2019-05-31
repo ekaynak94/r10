@@ -32,8 +32,8 @@ const SessionList = ({ allSessions, faveIds }) => {
 };
 
 SessionList.propTypes = {
-  allSections: PropTypes.array,
-  faveIds: PropTypes.array
+  allSessions: PropTypes.array.isRequired,
+  faveIds: PropTypes.array.isRequired
 };
 
 export default SessionList;
