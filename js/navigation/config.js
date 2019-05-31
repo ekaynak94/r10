@@ -23,7 +23,9 @@ const NavButton = ({ navigation }) => {
         style={{ padding: 1, marginLeft: 8 }}
         onPress={() => navigation.goBack()}
       >
-        <Icon title="md-arrow-round-back" size={25} color="white" />
+        <View>
+          <Icon name="md-arrow-round-back" size={25} color="white" />
+        </View>
       </TouchableOpacity>
     );
   } else {
