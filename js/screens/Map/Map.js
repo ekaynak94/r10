@@ -21,6 +21,8 @@ const Map = () => {
         <MapView.Marker
           style={styles.maker}
           coordinate={markerLocation}
+          title="R10"
+          description="This is where R10 is going to take place"
           image={require("../../assets/images/map_pin.png")}
         />
       </MapView>
