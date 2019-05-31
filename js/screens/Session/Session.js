@@ -23,7 +23,7 @@ const HeartIcon = Platform.select({
 const Session = ({ sessionData, faveContext, navigation }) => {
   const faved = !!faveContext.faveIds.find(id => id === sessionData.id);
   return (
-    <ScrollView style={styles.root}>
+    <ScrollView contentContainerStyle={styles.root}>
       <View style={styles.locationContainer}>
         <Text style={styles.location}>{sessionData.location}</Text>
         {faved && <Icon name={HeartIcon} size={15} color={theme.colors.red} />}
