@@ -1,33 +1,46 @@
 import React, { Component } from "react";
-import { TouchableOpacity, View, Text } from "react-native";
+import {
+  Platform,
+  LayoutAnimation,
+  UIManager,
+  TouchableOpacity,
+  View,
+  Text
+} from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
 class CodeOfConduct extends Component {
   constructor(props) {
     super(props);
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
     this.state = {
       isOpen: false
     };
   }
 
   toggle() {
-    const isOpen = !this.state.isOpen;
+    const { isOpen } = this.state;
+    LayoutAnimation.easeInEaseOut();
     this.setState({
-      isOpen
+      isOpen: !isOpen
     });
   }
 
   render() {
     const { conduct } = this.props;
+    const { isOpen } = this.state;
     return (
       <View style={styles.item}>
-        <TouchableOpacity onPress={this.toggle}>
+        <TouchableOpacity onPress={() => this.toggle()}>
           <Text style={styles.itemTitle}>
-            {this.state.isOpen ? "-" : "+"} {conduct.title}
+            {isOpen ? "-" : "+"} {conduct.title}
           </Text>
         </TouchableOpacity>
-        {this.state.isOpen && (
+        {isOpen && (
           <Text style={styles.itemDescription}>{conduct.description}</Text>
         )}
       </View>
