@@ -14,7 +14,7 @@ const theme = {
       ios: "Montserrat",
       android: "Montserrat-Regular"
     }),
-    fontSize: 12
+    fontSize: 16
   }
 };
 export default theme;
