@@ -11,18 +11,18 @@ class CodeOfConduct extends Component {
     };
   }
 
-  onClick = () => {
+  toggle() {
     const isOpen = !this.state.isOpen;
     this.setState({
       isOpen
     });
-  };
+  }
 
   render() {
     const { conduct } = this.props;
     return (
       <View style={styles.item}>
-        <TouchableOpacity onPress={this.onClick}>
+        <TouchableOpacity onPress={this.toggle}>
           <Text style={styles.itemTitle}>
             {this.state.isOpen ? "-" : "+"} {conduct.title}
           </Text>
