@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import { GET_ALL_SESSIONS } from "../../config/queries";
 import FaveContext from "../../context/FavesContext";
 import ErrorMessage from "../../components/ErrorMessage";
 import Schedule from "./Schedule";
@@ -32,17 +32,5 @@ class ScheduleContainer extends Component {
     );
   }
 }
-
-const GET_ALL_SESSIONS = gql`
-  query {
-    allSessions(orderBy: startTime_DESC) {
-      id
-      description
-      location
-      startTime
-      title
-    }
-  }
-`;
 
 export default ScheduleContainer;

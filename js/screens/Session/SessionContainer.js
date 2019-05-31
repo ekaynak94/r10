@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withNavigation } from "react-navigation";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import { GET_SESSION_SPEAKER } from "../../config/queries";
 import FaveContext from "../../context/FavesContext";
 import ErrorMessage from "../../components/ErrorMessage";
 
@@ -37,19 +37,5 @@ class SessionContainer extends Component {
     );
   }
 }
-
-const GET_SESSION_SPEAKER = gql`
-  query Session($id: ID!) {
-    Session(id: $id) {
-      speaker {
-        id
-        bio
-        image
-        name
-        url
-      }
-    }
-  }
-`;
 
 export default withNavigation(SessionContainer);
