@@ -4,12 +4,14 @@ import {
   View,
   Image,
   Linking,
-  TouchableHighlight,
-  Button
+  TouchableOpacity,
+  ScrollView
 } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
 import PropTypes from "prop-types";
 import { withNavigation } from "react-navigation";
+import theme from "../../config/styles";
 
 const goToUrl = url => {
   Linking.canOpenURL(url)
@@ -25,20 +27,38 @@ const goToUrl = url => {
 
 const Speaker = ({ speakerData, navigation }) => {
   return (
-    <View>
-      <Button onPress={() => navigation.goBack()} title="X" />
-      <Text>About The Speaker</Text>
-      <Image source={{ uri: speakerData.image }} />
-      <Text>{speakerData.name}</Text>
-      <Text>{speakerData.bio}</Text>
-      <TouchableHighlight
-        underlayColor="#EEEFFF"
-        onPress={() => {
-          goToUrl(speakerData.url);
-        }}
-      >
-        <Text>See more about the speaker on Wikipedia</Text>
-      </TouchableHighlight>
+    <View style={styles.root}>
+      <View style={styles.header}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
+        >
+          <Text style={styles.headerText}>X</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerText}>About The Speaker</Text>
+      </View>
+      <ScrollView style={styles.content}>
+        <Image style={styles.avatar} source={{ uri: speakerData.image }} />
+        <Text style={styles.name}>{speakerData.name}</Text>
+        <Text style={styles.bio}>{speakerData.bio}</Text>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.buttonHighlight}
+            onPress={() => {
+              goToUrl(speakerData.url);
+            }}
+          >
+            <LinearGradient
+              colors={[theme.colors.purple, theme.colors.lightPurple]}
+              start={{ x: 0.0, y: 1.0 }}
+              end={{ x: 1.0, y: 0.0 }}
+              style={styles.button}
+            >
+              <Text style={styles.buttonText}>Read more on Wikipedia</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 };
