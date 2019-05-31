@@ -5,7 +5,6 @@ import {
   Text,
   View,
   ScrollView,
-  TouchableHighlight,
   TouchableOpacity,
   Image
 } from "react-native";
@@ -58,8 +57,7 @@ const Session = ({ sessionData, faveContext, navigation }) => {
           </View>
           <View style={styles.separator} />
           <View style={styles.buttonContainer}>
-            <TouchableHighlight
-              underlayColor={theme.colors.lightGrey}
+            <TouchableOpacity
               style={styles.buttonHighlight}
               onPress={() => {
                 faved
@@ -77,7 +75,7 @@ const Session = ({ sessionData, faveContext, navigation }) => {
                   {faved ? "Remove from Faves" : "Add to Faves"}
                 </Text>
               </LinearGradient>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
       )}

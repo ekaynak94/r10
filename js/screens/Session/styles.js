@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   button: {
-    maxWidth: 200,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
