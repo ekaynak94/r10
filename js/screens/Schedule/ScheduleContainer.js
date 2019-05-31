@@ -15,20 +15,18 @@ class ScheduleContainer extends Component {
     return (
       <Query query={GET_ALL_SESSIONS}>
         {({ loading, data, error }) => {
-          const errorMsg = error ? error : new Error("new Error");
-          if (errorMsg) return <ErrorMessage error={errorMsg} />;
-          // if (loading || !data) return <Loader />;
-          // if (error) return <ErrorMessage error={error} />;
-          // return (
-          //   <FaveContext.Consumer>
-          //     {value => (
-          //       <Schedule
-          //         allSessions={data.allSessions}
-          //         faveIds={value.faveIds}
-          //       />
-          //     )}
-          //   </FaveContext.Consumer>
-          // );
+          if (loading || !data) return <Loader />;
+          if (error) return <ErrorMessage error={error} />;
+          return (
+            <FaveContext.Consumer>
+              {value => (
+                <Schedule
+                  allSessions={data.allSessions}
+                  faveIds={value.faveIds}
+                />
+              )}
+            </FaveContext.Consumer>
+          );
         }}
       </Query>
     );
