@@ -25,7 +25,11 @@ const About = ({ allConducts }) => {
         Vancouver,BC.
       </Text>
       <Text style={styles.title}>Code of Conduct</Text>
-      <CodeOfConduct allConducts={allConducts} />
+      <View style={styles.conductitem}>
+        {allConducts.map(conduct => (
+          <CodeOfConduct conduct={conduct} />
+        ))}
+      </View>
       <View style={styles.separator} />
       <Text style={styles.footer}>&copy; Red Academy 2019</Text>
     </ScrollView>
