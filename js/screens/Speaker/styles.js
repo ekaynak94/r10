@@ -12,13 +12,14 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 30,
-    marginBottom: 30,
+
     position: "relative"
   },
   headerText: {
+    marginTop: 30,
+    marginBottom: 30,
     fontFamily: theme.fonts.fontRegular,
-    fontSize: theme.fonts.fontSize,
+    fontSize: theme.fonts.fontSize * 1.5,
     color: "white"
   },
   backButton: {
