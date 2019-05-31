@@ -21,7 +21,7 @@ class CodeOfConduct extends Component {
   render() {
     const { conduct } = this.props;
     return (
-      <View style={styles.item} key={(conduct, index) => conduct.id}>
+      <View style={styles.item}>
         <TouchableOpacity onPress={this.onClick}>
           <Text style={styles.itemTitle}>
             {this.state.isOpen ? "-" : "+"} {conduct.title}

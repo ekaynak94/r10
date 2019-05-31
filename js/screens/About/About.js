@@ -27,7 +27,7 @@ const About = ({ allConducts }) => {
       <Text style={styles.title}>Code of Conduct</Text>
       <View style={styles.conductitem}>
         {allConducts.map(conduct => (
-          <CodeOfConduct conduct={conduct} />
+          <CodeOfConduct key={conduct.id} conduct={conduct} />
         ))}
       </View>
       <View style={styles.separator} />
