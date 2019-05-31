@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     padding: 12
   },
   title: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.2,
     paddingBottom: theme.fonts.fontSize * 0.5
   },
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   location: {
     color: theme.colors.mediumGrey,
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize
   }
 });

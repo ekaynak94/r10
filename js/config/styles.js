@@ -1,5 +1,3 @@
-import { Platform } from "react-native";
-
 const theme = {
   colors: {
     mediumGrey: "#999999",
@@ -10,10 +8,8 @@ const theme = {
     red: "#cf392a"
   },
   fonts: {
-    fontFamily: Platform.select({
-      ios: "Montserrat",
-      android: "Montserrat-Regular"
-    }),
+    fontRegular: "Montserrat-Regular",
+    fontLight: "Montserrat-Light",
     fontSize: 16
   }
 };

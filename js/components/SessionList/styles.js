@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.lightGrey
   },
   header: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.2
   },
   separator: {

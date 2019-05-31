@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     position: "relative"
   },
   headerText: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize,
     color: "white"
   },
@@ -42,14 +42,13 @@ const styles = StyleSheet.create({
     marginBottom: 8
   },
   name: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.5,
     marginTop: 8,
     marginBottom: 8
   },
   bio: {
-    fontFamily: theme.fonts.fontFamily,
-    fontWeight: "200",
+    fontFamily: theme.fonts.fontLight,
     fontSize: theme.fonts.fontSize,
     marginTop: 8,
     marginBottom: 8
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize,
     color: "white"
   }

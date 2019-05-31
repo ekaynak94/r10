@@ -4,14 +4,13 @@ import theme from "../../config/styles";
 const styles = StyleSheet.create({
   itemTitle: {
     fontSize: theme.fonts.fontSize,
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     color: theme.colors.purple,
     marginBottom: 8,
     marginTop: 8
   },
   itemDescription: {
-    fontFamily: theme.fonts.fontFamily,
-    fontWeight: "200",
+    fontFamily: theme.fonts.fontLight,
     fontSize: theme.fonts.fontSize,
     marginBottom: 8,
     marginTop: 8

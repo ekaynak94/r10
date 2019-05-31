@@ -59,7 +59,7 @@ export const sharedNavigationOptions = navigation => ({
   },
   headerTitleStyle: {
     color: "white",
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.5
   }
 });

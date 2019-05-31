@@ -14,32 +14,31 @@ const styles = StyleSheet.create({
   },
   location: {
     color: theme.colors.mediumGrey,
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize
   },
   title: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.5,
     marginBottom: 8,
     marginTop: 8
   },
   time: {
     color: theme.colors.red,
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.2,
     marginBottom: 8,
     marginTop: 8
   },
   text: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontLight,
     fontSize: theme.fonts.fontSize * 1.2,
-    fontWeight: "200",
     marginBottom: 8,
     marginTop: 8
   },
   speaker: {
     color: theme.colors.mediumGrey,
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize,
     marginBottom: 8,
     marginTop: 8
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   name: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize
   },
   separator: {
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize,
     color: "white"
   }

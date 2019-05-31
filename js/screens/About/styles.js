@@ -24,20 +24,19 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   title: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize * 1.5,
     marginBottom: 8,
     marginTop: 8
   },
   text: {
-    fontFamily: theme.fonts.fontFamily,
-    fontWeight: "200",
+    fontFamily: theme.fonts.fontLight,
     fontSize: theme.fonts.fontSize,
     marginBottom: 8,
     marginTop: 8
   },
   footer: {
-    fontFamily: theme.fonts.fontFamily,
+    fontFamily: theme.fonts.fontRegular,
     fontSize: theme.fonts.fontSize,
     marginBottom: 8,
     marginTop: 8
