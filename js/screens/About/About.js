@@ -19,7 +19,7 @@ const About = ({ allConducts }) => {
       <Text style={styles.text}>
         R10 s a conference that focuses on just about any topic related to dev.
       </Text>
-      <Text style={styles.title}> Date &amp; Revenue</Text>
+      <Text style={styles.title}>Date &amp; Revenue</Text>
       <Text style={styles.text}>
         The R10 conference will take place on Tuestday, June 27, 2017 in
         Vancouver,BC.
