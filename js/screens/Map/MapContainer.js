@@ -3,9 +3,9 @@ import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
 import { GET_ALL_SESSION_LOCATIONS } from "../../config/queries";
 import ErrorMessage from "../../components/ErrorMessage";
-import MapView from "./MapView";
+import Map from "./Map";
 
-class MapViewContainer extends Component {
+class MapContainer extends Component {
   static navigationOptions = {
     title: "Map"
   };
@@ -16,11 +16,11 @@ class MapViewContainer extends Component {
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
           if (error) return <ErrorMessage error={error} />;
-          return <MapView allSessions={data.allSessions} />;
+          return <Map allSessions={data.allSessions} />;
         }}
       </Query>
     );
   }
 }
 
-export default MapViewContainer;
+export default MapContainer;

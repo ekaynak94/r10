@@ -3,17 +3,13 @@ import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import styles from "./styles";
 
-const MapView = ({ allSessions }) => {
+const Map = ({ allSessions }) => {
   console.log(allSessions);
-  return (
-    <View>
-      <Text>This is the map view...</Text>
-    </View>
-  );
+  return <View />;
 };
 
-MapView.propTypes = {
+Map.propTypes = {
   allSessions: PropTypes.array.isRequired
 };
 
-export default MapView;
+export default Map;

@@ -3,7 +3,7 @@ import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import { sharedNavigationOptions } from "./config";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AboutScreen from "../screens/About";
-import MapViewScreen from "../screens/MapView";
+import MapScreen from "../screens/Map";
 import ScheduleScreen from "../screens/Schedule";
 import SessionScreen from "../screens/Session";
 import FavesScreen from "../screens/Faves";
@@ -22,7 +22,7 @@ const AboutStack = createStackNavigator(
 
 const MapStack = createStackNavigator(
   {
-    Map: MapViewScreen
+    Map: MapScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
