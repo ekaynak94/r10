@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   avatar: {
-    height: 50,
-    width: 50,
-    borderRadius: 25,
+    height: 70,
+    width: 70,
+    borderRadius: 35,
     marginRight: 10,
     marginLeft: 10
   },
