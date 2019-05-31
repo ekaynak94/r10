@@ -1,26 +1,27 @@
 import React from "react";
-import { TouchableHighlight, View, Text } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
-const CodeOfConduct = ({ conduct }) => (
-  <View>
-    <View key={(conduct, index) => conduct.id}>
-      <TouchableHighlight
-        underlayColor="#EEEFFF"
-        onPress={() => {
-          console.log("open");
-        }}
-      >
-        <Text>{conduct.title}</Text>
-      </TouchableHighlight>
-      <Text>{conduct.description}</Text>
-    </View>
+const CodeOfConduct = ({ allConducts }) => (
+  <View style={styles.root}>
+    {allConducts.map(conduct => (
+      <View style={styles.item} key={(conduct, index) => conduct.id}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("open");
+          }}
+        >
+          <Text style={styles.itemTitle}>+ {conduct.title}</Text>
+        </TouchableOpacity>
+        <Text style={styles.itemDescription}>{conduct.description}</Text>
+      </View>
+    ))}
   </View>
 );
 
 CodeOfConduct.propTypes = {
-  conduct: PropTypes.object
+  allConduct: PropTypes.array
 };
 
 export default CodeOfConduct;

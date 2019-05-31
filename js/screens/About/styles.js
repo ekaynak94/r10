@@ -36,12 +36,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8
   },
-  listItem: {
-    fontFamily: theme.fonts.fontFamily,
-    fontSize: theme.fonts.fontSize,
-    marginBottom: 8,
-    marginTop: 8
-  },
   footer: {
     fontFamily: theme.fonts.fontFamily,
     fontSize: theme.fonts.fontSize,
