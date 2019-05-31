@@ -23,6 +23,15 @@ export const GET_ALL_SESSIONS = gql`
   }
 `;
 
+export const GET_ALL_SESSION_LOCATIONS = gql`
+  query {
+    allSessions(orderBy: id_DESC) {
+      id
+      location
+    }
+  }
+`;
+
 export const GET_SESSION_SPEAKER = gql`
   query Session($id: ID!) {
     Session(id: $id) {
