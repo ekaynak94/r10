@@ -27,16 +27,41 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   content: {
-    height: "100%",
+    minHeight: "100%",
     backgroundColor: "white",
-    borderRadius: 5
+    borderRadius: 5,
+    flexGrow: 1,
+    alignItems: "center",
+    padding: 10
+  },
+  avatar: {
+    height: 120,
+    width: 120,
+    borderRadius: 60,
+    marginTop: 8,
+    marginBottom: 8
+  },
+  name: {
+    fontFamily: theme.fonts.fontFamily,
+    fontSize: theme.fonts.fontSize * 1.5,
+    marginTop: 8,
+    marginBottom: 8
+  },
+  bio: {
+    fontFamily: theme.fonts.fontFamily,
+    fontWeight: "200",
+    fontSize: theme.fonts.fontSize,
+    marginTop: 8,
+    marginBottom: 8
   },
 
   buttonContainer: {
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 8,
+    marginBottom: 8
   },
   button: {
     display: "flex",

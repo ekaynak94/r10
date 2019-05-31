@@ -37,7 +37,7 @@ const Speaker = ({ speakerData, navigation }) => {
         </TouchableOpacity>
         <Text style={styles.headerText}>About The Speaker</Text>
       </View>
-      <ScrollView style={styles.content}>
+      <ScrollView contentContainerStyle={styles.content}>
         <Image style={styles.avatar} source={{ uri: speakerData.image }} />
         <Text style={styles.name}>{speakerData.name}</Text>
         <Text style={styles.bio}>{speakerData.bio}</Text>
