@@ -3,6 +3,7 @@ import {
   Platform,
   LayoutAnimation,
   UIManager,
+  Animated,
   TouchableOpacity,
   View,
   Text
@@ -18,12 +19,22 @@ class CodeOfConduct extends Component {
         UIManager.setLayoutAnimationEnabledExperimental(true);
     }
     this.state = {
-      isOpen: false
+      isOpen: false,
+      rotate: new Animated.Value(0)
     };
   }
 
   toggle() {
     const { isOpen } = this.state;
+    const animation = Animated.timing(this.state.rotate, {
+      toValue: 1,
+      duration: 1000
+    });
+    animation.start(animation => {
+      if (animation.finished) {
+        this.setState({ rotate: new Animated.Value(0) });
+      }
+    });
     LayoutAnimation.easeInEaseOut();
     this.setState({
       isOpen: !isOpen
@@ -32,13 +43,24 @@ class CodeOfConduct extends Component {
 
   render() {
     const { conduct } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, rotate } = this.state;
+    const deg = rotate.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "360deg"]
+    });
+    const animatedStyles = {
+      transform: [{ rotate: deg }],
+      marginRight: 12
+    };
     return (
       <View style={styles.item}>
         <TouchableOpacity onPress={() => this.toggle()}>
-          <Text style={styles.itemTitle}>
-            {isOpen ? "-" : "+"} {conduct.title}
-          </Text>
+          <View style={styles.itemTitleContainer}>
+            <Animated.Text style={[styles.itemTitle, animatedStyles]}>
+              {isOpen ? "-" : "+"}
+            </Animated.Text>
+            <Text style={styles.itemTitle}>{conduct.title}</Text>
+          </View>
         </TouchableOpacity>
         {isOpen && (
           <Text style={styles.itemDescription}>{conduct.description}</Text>

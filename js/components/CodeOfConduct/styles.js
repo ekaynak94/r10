@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 import theme from "../../config/styles";
 
 const styles = StyleSheet.create({
+  itemTitleContainer: {
+    display: "flex",
+    flexDirection: "row"
+  },
   itemTitle: {
     fontSize: theme.fonts.fontSize,
     fontFamily: theme.fonts.fontRegular,
