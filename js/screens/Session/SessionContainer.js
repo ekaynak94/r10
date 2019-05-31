@@ -4,6 +4,7 @@ import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import FaveContext from "../../context/FavesContext";
+import ErrorMessage from "../../components/ErrorMessage";
 
 import Session from "./Session";
 
@@ -20,6 +21,7 @@ class SessionContainer extends Component {
       <Query query={GET_SESSION_SPEAKER} variables={{ id: session.id }}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
+          if (error) return <ErrorMessage error={error} />;
           return (
             <FaveContext.Consumer>
               {value => (

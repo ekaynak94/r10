@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Faves from "./Faves";
 import FaveContext from "../../context/FavesContext";
+import ErrorMessage from "../../components/ErrorMessage";
 
 class FavesContainer extends Component {
   static navigationOptions = {
@@ -15,6 +16,7 @@ class FavesContainer extends Component {
       <Query query={GET_ALL_SESSIONS}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
+          if (error) return <ErrorMessage error={error} />;
           return (
             <FaveContext.Consumer>
               {value => (

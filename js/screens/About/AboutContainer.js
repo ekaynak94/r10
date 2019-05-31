@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-
+import ErrorMessage from "../../components/ErrorMessage";
 import About from "./About";
 
 class AboutContainer extends Component {
@@ -14,6 +14,7 @@ class AboutContainer extends Component {
       <Query query={GET_CONDUCT_ITEMS}>
         {({ loading, data, error }) => {
           if (loading || !data) return <Loader />;
+          if (error) return <ErrorMessage error={error} />;
           return <About allConducts={data.allConducts} />;
         }}
       </Query>
