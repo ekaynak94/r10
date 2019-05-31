@@ -36,7 +36,7 @@ class CodeOfConduct extends Component {
 }
 
 CodeOfConduct.propTypes = {
-  conduct: PropTypes.array.isRequired
+  conduct: PropTypes.object.isRequired
 };
 
 export default CodeOfConduct;
