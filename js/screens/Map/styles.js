@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
   map: {
     height: "100%",
     width: "100%"
+  },
+  marker: {
+    height: 50,
+    width: 50
   }
 });
 

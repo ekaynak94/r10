@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles";
+import { View } from "react-native";
 import MapView from "react-native-maps";
 
 const region = {
@@ -8,8 +9,23 @@ const region = {
   latitudeDelta: 0.0922,
   longitudeDelta: 0.0421
 };
+
+const markerLocation = {
+  latitude: region.latitude,
+  longitude: region.longitude
+};
 const Map = () => {
-  return <MapView style={styles.map} region={region} />;
+  return (
+    <View>
+      <MapView style={styles.map} region={region}>
+        <MapView.Marker
+          style={styles.maker}
+          coordinate={markerLocation}
+          image={require("../../assets/images/map_pin.png")}
+        />
+      </MapView>
+    </View>
+  );
 };
 
 export default Map;
