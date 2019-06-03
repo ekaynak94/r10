@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: theme.fonts.fontRegular,
-    fontSize: theme.fonts.fontSize * 1.2,
+    fontSize: theme.fonts.fontSize * 1.1,
     paddingBottom: theme.fonts.fontSize * 0.5
   },
   content: {

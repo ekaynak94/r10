@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontFamily: theme.fonts.fontRegular,
-    fontSize: theme.fonts.fontSize * 1.2
+    fontSize: theme.fonts.fontSize * 1.1
   },
   separator: {
     width: "100%",

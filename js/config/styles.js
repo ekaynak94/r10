@@ -10,7 +10,7 @@ const theme = {
   fonts: {
     fontRegular: "Montserrat-Regular",
     fontLight: "Montserrat-Light",
-    fontSize: 16
+    fontSize: 14
   }
 };
 export default theme;
