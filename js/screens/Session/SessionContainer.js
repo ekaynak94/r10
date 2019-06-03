@@ -5,7 +5,7 @@ import { Query } from "react-apollo";
 import { GET_SESSION_SPEAKER } from "../../config/queries";
 import FaveContext from "../../context/FavesContext";
 import ErrorMessage from "../../components/ErrorMessage";
-
+import PropTypes from "prop-types";
 import Session from "./Session";
 
 class SessionContainer extends Component {
@@ -37,5 +37,9 @@ class SessionContainer extends Component {
     );
   }
 }
+
+SessionContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default withNavigation(SessionContainer);
