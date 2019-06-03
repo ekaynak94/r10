@@ -10,23 +10,23 @@ Below are the screenshots taken from IOS simulator.
 
 ### Schedule Screen
 
-![R10 App](./screenshots/screenshot-1.png| width=504)
+![R10 App](./screenshots/screenshot-1.png =252x504)
 
 ### Session Screen
 
-![R10 App](./screenshots/screenshot-2.png| width=504)
+![R10 App](./screenshots/screenshot-2.png =252x504)
 
 ### Speaker Modal
 
-![R10 App](./screenshots/screenshot-3.png| width=504)
+![R10 App](./screenshots/screenshot-3.png =252x504)
 
 ### Map Screen
 
-![R10 App](./screenshots/screenshot-4.png| width=504)
+![R10 App](./screenshots/screenshot-4.png =252x504)
 
 ### About Screen
 
-![R10 App](./screenshots/screenshot-5.png| width=504)
+![R10 App](./screenshots/screenshot-5.png =252x504)
 
 ## Installation
 
