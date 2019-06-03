@@ -5,11 +5,19 @@ import SessionList from "../../components/SessionList";
 import styles from "./styles";
 
 const Faves = ({ allSessions, faveIds }) => {
-  return (
-    <View>
-      <SessionList allSessions={allSessions} faveIds={faveIds} />
-    </View>
-  );
+  if (faveIds.lenght > 0) {
+    return (
+      <View>
+        <SessionList allSessions={allSessions} faveIds={faveIds} />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.messageContainer}>
+        <Text style={styles.message}>No faves available...</Text>
+      </View>
+    );
+  }
 };
 
 Faves.propTypes = {
