@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { withNavigation } from "react-navigation";
-
+import PropTypes from "prop-types";
 import Speaker from "./Speaker";
 
 class SpeakerContainer extends Component {
   render() {
     const { navigation } = this.props;
     const speaker = navigation.getParam("speaker");
-    return <Speaker speakerData={speaker} />;
+    return <Speaker speakerData={speaker} navigation={navigation} />;
   }
 }
 
-export default withNavigation(SpeakerContainer);
+SpeakerContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export default SpeakerContainer;

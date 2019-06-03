@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withNavigation } from "react-navigation";
 import Loader from "../../components/Loader";
 import { Query } from "react-apollo";
 import { GET_SESSION_SPEAKER } from "../../config/queries";
@@ -42,4 +41,4 @@ SessionContainer.propTypes = {
   navigation: PropTypes.object.isRequired
 };
 
-export default withNavigation(SessionContainer);
+export default SessionContainer;

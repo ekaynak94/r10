@@ -10,7 +10,6 @@ import {
 import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
 import PropTypes from "prop-types";
-import { withNavigation } from "react-navigation";
 import theme from "../../config/styles";
 
 const goToUrl = url => {
@@ -64,7 +63,8 @@ const Speaker = ({ speakerData, navigation }) => {
 };
 
 Speaker.propTypes = {
-  speakerData: PropTypes.object.isRequired
+  speakerData: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired
 };
 
-export default withNavigation(Speaker);
+export default Speaker;
