@@ -16,18 +16,6 @@ Below are the screenshots taken from IOS simulator.
 
 <img src="./screenshots/screenshot-2.png" alt="session screen" width="252" height="504">
 
-### Speaker Modal
-
-<img src="./screenshots/screenshot-3.png" alt="speaker modal" width="252" height="504">
-
-### Map Screen
-
-<img src="./screenshots/screenshot-4.png" alt="map screen" width="252" height="504">
-
-### About Screen
-
-<img src="./screenshots/screenshot-5.png" alt="about screen" width="252" height="504">
-
 ## Installation
 
 - Make sure to have Node and Homebrew Installed.
@@ -35,38 +23,26 @@ Below are the screenshots taken from IOS simulator.
 - Run the command 'npm install -g react-native-cli' in your terminal.
 - Clone repo or download as a zip file.
 - Run yarn in root directory.
-- To run the app on a emulator/simulator follow the steps described below.
+- To run the app on a emulator/simulator run the following commands in the root directory.
 
 ### IOS Simulator
 
-- Install Xcode.
-- After installing start xcode and accept terms and conditions agreement.
-- Run the command 'xcode-select --install' in your terminal.
-- Go the the project root directory in your terminal and run the command 'react-native run-ios'.
-- Wait for it to build and enjoy.
+```bash
+react-native run-ios
+```
 
 ### Android Emulator
 
-- Ensure you have JDK 8 installed on your computer.
-- Set the following variable in your .bash_profile: export JAVA_HOME="/Library/Java/JavaVirtualMachines/[JDK VERSION HERE]/Contents/Home".
-- run the command 'source \$HOME/.bash_profile' in your terminal.
-- Install and run Android Studio. Follow the instructions as described in the 'install android studio' section in the link: https://facebook.github.io/react-native/docs/getting-started.html#preparing-the-android-device.
-- Start the emulator and then run the command 'react-native run-android' in the project root directory.
+```bash
+react-native run-android
+```
 
 ## Technologies Used
 
 - React Native
-- RN Packager Server
 - Async Storage
 - GraphQL
-- React Native Debugger
 - Google Maps API
-
-## Built With
-
-- VS Code
-- XCode
-- Android Studio
 
 ## Author
 
